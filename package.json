@@ -26,7 +26,8 @@
   ],
   "main": "Gruntfile.coffee",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "grunt test",
+    "start": "grunt"
   },
   "dependencies": {
     "flex-svg": "0.0.1",
