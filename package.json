@@ -1,0 +1,44 @@
+{
+  "name": "grunt-flex-svg",
+  "version": "0.0.0",
+  "description": "Grunt task for creating SVG files with flexible width and height",
+  "homepage": "https://github.com/shinnn/grunt-flex-svg",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shinnn/grunt-flex-svg.git"
+  },
+  "bugs": {
+    "url": "https://github.com/shinnn/grunt-flex-svg/issues"
+  },
+  "author": {
+    "name": "Shinnosuke Watanabe",
+    "email": "snnskwtnb@gmail.com",
+    "url": "https://github.com/shinnn"
+  },
+  "keywords": [
+    "gruntplugin",
+    "svg"
+  ],
+  "licenses": [
+    {
+      "type": "MIT"
+    }
+  ],
+  "main": "Gruntfile.coffee",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "flex-svg": "0.0.1",
+    "async": "~0.2.10"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-contrib-jshint": "~0.8.0",
+    "grunt-contrib-clean": "~0.5.0",
+    "load-grunt-tasks": "~0.3.0",
+    "jshint-stylish": "~0.1.4",
+    "grunt-release": "~0.6.0",
+    "grunt-mocha-test": "~0.8.2"
+  }
+}
