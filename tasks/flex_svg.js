@@ -1,4 +1,4 @@
-// grunt-merge-data
+// grunt-flex-svg
 // Copyright (c) 2014 Shinnosuke Watanabe
 // Licensed under the MIT license
 
