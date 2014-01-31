@@ -24,7 +24,6 @@ module.exports = (grunt) ->
           cwd: 'test/fixture'
           src: ['*.svg']
           dest: 'test/actual'
-          ext: '.min.svg'
         ]
 
     clean:
