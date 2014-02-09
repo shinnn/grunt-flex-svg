@@ -17,7 +17,11 @@
   },
   "keywords": [
     "gruntplugin",
-    "svg"
+    "svg",
+    "flexible",
+    "responsive",
+    "width",
+    "height"
   ],
   "licenses": [
     {

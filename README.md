@@ -46,5 +46,5 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 
 ## License
 
-Copyright (c) 2013 - 2014 [Shinnosuke Watanabe](https://github.com/shinnn).
+Copyright (c) 2014 [Shinnosuke Watanabe](https://github.com/shinnn).
 Licensed under [the MIT license](./LICENSE).
