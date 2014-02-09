@@ -4,27 +4,33 @@
 
 'use strict';
 
+var fs = require('fs');
 var flexSvg = require('flex-svg');
-var async = require('async');
+var eachAsync = require('each-async');
 
 module.exports = function (grunt) {
   grunt.registerMultiTask(
     'flex_svg',
-    'Merge multiple data into a file or Grint config.',
+    'Create SVG with flexible size.',
     function flexSvgTask() {
-      // Merge task-specific and/or target-specific options with these defaults
+      var readOption = {encoding: grunt.file.defaultEncoding};
       var options = this.options();
     
-      async.each(this.files, function (map, next) {
-        var svgString = grunt.file.read(map.src);
-        flexSvg(svgString, function (err, data) {
-          if (err) {
-            grunt.warn('Error parsing svg: ' + err);
-          } else {
-            grunt.file.write(map.dest, data);
-            grunt.log.writeln('File "' + map.dest + '" created.');
+      eachAsync(this.files, function (map, index, next) {
+        fs.readFile(map.src[0], readOption, function(readError, data) {
+          if (readError) {
+            grunt.log.warn('Source file "' + map.src + '" not found.');
+            next();
           }
-          next();
+          flexSvg(data, function (parseError, data) {
+            if (parseError) {
+              grunt.warn('Error parsing svg: ' + parseError);
+            } else {
+              grunt.file.write(map.dest, data);
+              grunt.log.writeln('File "' + map.dest + '" created.');
+            }
+            next();
+          });
         });
       }, this.async());
     }

@@ -5,8 +5,9 @@
 module.exports = (grunt) ->
   'use strict'
   
+  require('time-grunt') grunt
   require('load-grunt-tasks') grunt
-    
+  
   grunt.initConfig
     jshint:
       options:
@@ -35,8 +36,7 @@ module.exports = (grunt) ->
           reporter: 'spec'
         src: ['test/*.coffee']
 
-    release:
-      options: {}
+    release: {}
     
   # Actually load this plugin's task
   grunt.loadTasks 'tasks'
