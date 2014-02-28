@@ -22,11 +22,11 @@ module.exports = function (grunt) {
             grunt.log.warn('Source file "' + map.src + '" not found.');
             next();
           }
-          flexSvg(data, function (parseError, data) {
+          flexSvg(data, function (parseError, result) {
             if (parseError) {
               grunt.warn('Error parsing svg: ' + parseError);
             } else {
-              grunt.file.write(map.dest, data);
+              grunt.file.write(map.dest, result);
               grunt.log.writeln('File "' + map.dest + '" created.');
             }
             next();
