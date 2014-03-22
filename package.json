@@ -38,12 +38,12 @@
   },
   "devDependencies": {
     "grunt": "~0.4.4",
-    "grunt-contrib-jshint": "^0.9.2",
     "grunt-contrib-clean": "~0.5.0",
-    "load-grunt-tasks": "^0.4.0",
-    "jshint-stylish": "~0.1.5",
-    "grunt-release": "~0.7.0",
+    "grunt-contrib-jshint": "^0.9.2",
     "grunt-mocha-test": "^0.10.0",
-    "time-grunt": "~0.2.9"
+    "grunt-release": "~0.7.0",
+    "jshint-stylish": "~0.1.5",
+    "load-grunt-tasks": "^0.4.0",
+    "time-grunt": "^0.3.1"
   }
 }
