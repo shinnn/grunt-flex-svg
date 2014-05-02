@@ -1,9 +1,9 @@
 # grunt-flex-svg
 
-[![NPM version](https://badge.fury.io/js/grunt-flex-svg.png)](http://badge.fury.io/js/grunt-flex-svg)
-[![Build Status](https://travis-ci.org/shinnn/grunt-flex-svg.png?branch=master)](https://travis-ci.org/shinnn/grunt-flex-svg)
-[![Dependency Status](https://david-dm.org/shinnn/grunt-flex-svg.png)](https://david-dm.org/shinnn/grunt-flex-svg)
-[![devDependency Status](https://david-dm.org/shinnn/grunt-flex-svg/dev-status.png)](https://david-dm.org/shinnn/grunt-flex-svg#info=devDependencies)
+[![NPM version](https://badge.fury.io/js/grunt-flex-svg.svg)](http://badge.fury.io/js/grunt-flex-svg)
+[![Build Status](https://travis-ci.org/shinnn/grunt-flex-svg.svg?branch=master)](https://travis-ci.org/shinnn/grunt-flex-svg)
+[![Dependency Status](https://david-dm.org/shinnn/grunt-flex-svg.svg)](https://david-dm.org/shinnn/grunt-flex-svg)
+[![devDependency Status](https://david-dm.org/shinnn/grunt-flex-svg/dev-status.svg)](https://david-dm.org/shinnn/grunt-flex-svg#info=devDependencies)
 
 Grunt task for creating SVG files with flexible width and height using [flex-svg](https://github.com/shinnn/node-flex-svg)
 
