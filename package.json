@@ -1,6 +1,6 @@
 {
   "name": "grunt-flex-svg",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "Grunt task for creating SVG files with flexible width and height",
   "homepage": "https://github.com/shinnn/grunt-flex-svg",
   "repository": {
