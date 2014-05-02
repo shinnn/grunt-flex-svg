@@ -53,18 +53,16 @@ module.exports = (grunt) ->
 
     release: {}
   
-  grunt.registerTask 'loadTasks', grunt.loadTasks
+  grunt.registerTask 'run_this_plugin', ->
+    grunt.loadTasks 'tasks'
+    grunt.task.run ['flex_svg']
 
-  grunt.registerTask 'build', [
+  grunt.registerTask 'test', [
     'clean'
     'jshint'
     'es6transpiler'
-    'loadTasks:tasks'
-  ]
-  
-  grunt.registerTask 'test', [
-    'flex_svg'
+    'run_this_plugin'
     'mochaTest'
   ]
   
-  grunt.registerTask 'default', ['build', 'test']
+  grunt.registerTask 'default', ['test']
