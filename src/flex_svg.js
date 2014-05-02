@@ -7,8 +7,9 @@
 var fs = require('fs');
 var flexSvg = require('flex-svg');
 var eachAsync = require('each-async');
+var chalk = require('chalk');
 
-module.exports = function (grunt) {
+module.exports = function(grunt) {
   grunt.registerMultiTask(
     'flex_svg',
     'Create SVG with flexible size.',
@@ -16,18 +17,27 @@ module.exports = function (grunt) {
       var readOption = {encoding: grunt.file.defaultEncoding};
       var options = this.options();
     
-      eachAsync(this.files, function (map, index, next) {
-        fs.readFile(map.src[0], readOption, function(readError, data) {
+      eachAsync(this.files, (map, index, next) => {
+        var src = map.src[0];
+
+        if (!src) {
+          grunt.log.warn(`Destination ${
+            chalk.cyan(map.dest)
+          } not written because src files were empty.`);
+          return next();
+        }
+
+        fs.readFile(src, readOption, (readError, data) => {
           if (readError) {
-            grunt.log.warn('Source file "' + map.src + '" not found.');
-            next();
+            grunt.log.warn(`Source file "${ map.src }" not found.`);
+            return next();
           }
-          flexSvg(data, function (parseError, result) {
+          flexSvg(data, (parseError, result) => {
             if (parseError) {
               grunt.warn('Error parsing svg: ' + parseError);
             } else {
               grunt.file.write(map.dest, result);
-              grunt.log.writeln('File "' + map.dest + '" created.');
+              grunt.log.writeln(`File ${ chalk.cyan(map.dest) } created.`);
             }
             next();
           });
