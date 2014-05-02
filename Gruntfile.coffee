@@ -15,7 +15,7 @@ module.exports = (grunt) ->
       options:
         jshintrc: '.jshintrc'
         reporter: require 'jshint-stylish'
-      all: ['tasks/*.js']
+      all: ['src/flex_svg.js', 'test/*.js']
     
     es6transpiler:
       options:
