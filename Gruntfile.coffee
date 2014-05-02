@@ -6,46 +6,65 @@ module.exports = (grunt) ->
   'use strict'
   
   require('time-grunt') grunt
-  require('load-grunt-tasks') grunt
+  require('jit-grunt') grunt, {
+    es6transpiler: 'grunt-es6-transpiler'
+  }
   
   grunt.initConfig
     jshint:
       options:
-        camelcase: true
-        trailing: true
-        indent: 2
-        node: true
+        jshintrc: '.jshintrc'
         reporter: require 'jshint-stylish'
       all: ['tasks/*.js']
-      
+    
+    es6transpiler:
+      options:
+        globals:
+          describe: false
+          it: false
+      task:
+        src: ['src/flex_svg.js']
+        dest: 'tasks/flex_svg.js'
+      tests:
+        src: ['test/*.js']
+        dest: 'tmp/test-es5.js'
+    
     flex_svg:
+      no_write:
+        src: ['foo.svg']
+        dest: 'foo.svg'
       test:
         files: [
           expand: true
-          cwd: 'test/fixture'
+          cwd: 'test/fixtures'
           src: ['*.svg']
           dest: 'test/actual'
         ]
 
     clean:
-      tests: ['test/actual/*']
-          
+      tasks: ['tasks']
+      tests: ['test/actual/*', '<%= es6transpiler.tests.dest %>']
+
     mochaTest:
       test:
         options:
           reporter: 'spec'
-        src: ['test/*.coffee']
+        src: ['tmp/*.js']
 
     release: {}
-    
-  # Actually load this plugin's task
-  grunt.loadTasks 'tasks'
   
-  grunt.registerTask 'test', [
+  grunt.registerTask 'loadTasks', grunt.loadTasks
+
+  grunt.registerTask 'build', [
     'clean'
     'jshint'
+    'es6transpiler'
+    'loadTasks:tasks'
+  ]
+  
+  grunt.registerTask 'test', [
     'flex_svg'
     'mochaTest'
   ]
   
-  grunt.registerTask 'default', ['test']
+  grunt.registerTask 'default', ['build', 'test']
