@@ -25,12 +25,12 @@
   ],
   "licenses": [
     {
-      "type": "MIT"
+      "type": "MIT",
+      "url": "https://github.com/shinnn/grunt-flex-svg/blob/master/LICENSE"
     }
   ],
   "scripts": {
-    "test": "grunt test",
-    "start": "grunt"
+    "test": "grunt test"
   },
   "dependencies": {
     "each-async": "^0.1.3",
