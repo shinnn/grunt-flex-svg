@@ -9,14 +9,13 @@ var flexSvg = require('flex-svg');
 var eachAsync = require('each-async');
 var chalk = require('chalk');
 
-module.exports = function(grunt) {
+module.exports = grunt => {
   grunt.registerMultiTask(
     'flex_svg',
     'Create SVG with flexible size.',
     function flexSvgTask() {
       var readOption = {encoding: grunt.file.defaultEncoding};
-      var options = this.options();
-    
+
       eachAsync(this.files, (map, index, next) => {
         var src = map.src[0];
 
