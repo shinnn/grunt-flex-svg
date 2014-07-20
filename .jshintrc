@@ -1,10 +1,18 @@
 {
+  "bitwise": true,
   "camelcase": true,
+  "curly": true,
   "eqeqeq": true,
-  "indent": 2,
+  "esnext": true,
+  "immed": true,
+  "latedef": true,
+  "newcap": true,
+  "noarg": true,
   "quotmark": "single",
+  "regexp": true,
+  "strict": true,
+  "undef": true,
   "browser": false,
   "node": true,
-  "esnext": true,
   "mocha": true
 }
