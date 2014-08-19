@@ -28,7 +28,7 @@ module.exports = grunt => {
 
         fs.readFile(src, readOption, (readError, data) => {
           if (readError) {
-            grunt.log.warn(`Source file "${ map.src }" not found.`);
+            grunt.log.warn(`Source file "${map.src}" not found.`);
             return next();
           }
           flexSvg(data, (parseError, result) => {
